@@ -1,0 +1,62 @@
+.backgound-custom{
+    background-color: 
+    rgba(20, 216, 230, 0.09);
+}
+
+.full-width
+{
+    width: 100%;
+}
+
+.half-width{
+    width: 50%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mtp-5{
+    margin-top: 5%;
+  }
+  .mt-10{
+    margin-top: 10px;
+  }
+  .mb-10{
+    margin-bottom: 10px;
+  }
+  .ml-10{
+    margin-left: 10px;
+  }
+  .mr-10{
+    margin-right: 10px;
+  }
+  .mt-20{
+    margin-top: 20px;
+  }
+  .mb-20{
+    margin-bottom: 20px;
+  }
+  .ml-20{
+    margin-left: 20px;
+  }
+  .mr-20{
+    margin-right: 20px;
+  }
+  .mr-30{
+      margin-right: 30px;
+  }
+  .mt-40{
+      margin-top: 40px;
+  }
+  .mr-40{
+    margin-right: 40px;
+  }
+  .mr-50{
+    margin-right: 50px;
+  }
+  .mr-70{
+    margin-right: 70px;
+  }
+  .ts-20{
+    font-size: 30px;
+  }

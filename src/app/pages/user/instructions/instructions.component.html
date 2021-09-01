@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="backgound-custom">
+                    <mat-card-header>
+                        <mat-card-title class="mb-20">
+                            <h1><mat-icon class="mr-10 ">info</mat-icon>Read The Instruction Carefully</h1>
+                            <mat-divider class = "mb-10"></mat-divider>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="mt-10 ml-10 l-align">
+                        <h2><mat-icon class="mr-10">quiz</mat-icon>This Quiz is on {{quiz.title}}</h2>
+                        <h3><mat-icon class="mr-10">description</mat-icon>{{quiz.description}}</h3>
+                        <mat-divider class = "mb-20"></mat-divider>
+                        <h2><mat-icon class="mr-10 mt-20">notification_important</mat-icon>Important Instructions</h2>
+                        <ul >
+                            <li class="mt-10"><i>This Quiz is Only for Practice Purpose</i></li>
+                            <li class="mt-10"><i>Submit the Quiz within <b>{{quiz.noOfQuestions * 1}}</b> minutes</i></li>
+                            <li class="mt-10"><i>There are <b>{{quiz.noOfQuestions}}</b> Number of Questions in this Quiz</i></li>
+                            <li class="mt-10"><i>Each Questions carries <b>{{quiz.maxMarks / quiz.noOfQuestions}}</b> Marks</i></li>
+                            <li class="mt-10"><i>No Negative Marking</i></li>
+                            <li class="mt-10"><i>All Questions in this Quiz is of MCQ type</i></li>
+                            <li class="mt-10"><i>Can Attempt the Quiz any number of times</i></li>
+                        </ul>
+                        <mat-divider class = "mb-10"></mat-divider>
+                        <h2><mat-icon class="mr-10 mt-20">priority_high</mat-icon>Attempting Quiz</h2>
+                        <ul >
+                            <li class="mt-10">Click on <b>Start</b> Button to Start the Quiz</li>
+                            <li class="mt-10">Timer will start from the moment <b>Start</b> Button is clicked</li>
+                            <li class="mt-10">Scroll Down to move to next Question</li>
+                            <li class="mt-10">Click on <b>Submit</b> Quiz button to submit the Quiz</li>
+                            <li class="mt-10">Report of the Quiz will automatically generated in PDF format</li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" class="start-btn"
+                        routerLink="/start/{{catid}}/{{quiz.qid}}">
+                            Start
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

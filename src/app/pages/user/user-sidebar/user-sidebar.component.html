@@ -1,0 +1,18 @@
+<mat-card class = "backgound-custom">
+    <mat-action-list>
+        <div mat-subheader>
+            <h1><mat-icon class="mr-10">dashboard</mat-icon>Menu</h1> 
+        </div>
+
+        <button mat-list-item routerLink="/user-dashboard/0">
+            <mat-icon mat-list-icon>question_answer</mat-icon>
+            All Quizzes
+        </button>
+
+        <button mat-list-item *ngFor = "let c of categories"
+        [routerLink] ="'/user-dashboard/' + c.cid">
+            <mat-icon mat-list-icon>question_answer</mat-icon>
+            {{c.title}}
+        </button>
+    </mat-action-list>
+</mat-card>

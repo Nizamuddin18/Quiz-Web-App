@@ -1,0 +1,54 @@
+<mat-card class = "backgound-custom" *ngIf="user">
+    <h1>Profile Details</h1> 
+    <mat-divider class = "mb-10"> or </mat-divider>
+    <mat-card-content>
+        <div class="bootstrap-wrapper ">
+            <div class="container">
+                <div class="container text-center mt-40  mb-20">
+                    <h1>{{user.firstName }} {{user.lastName }} </h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 ">
+                        <table class="table text-center">
+                            <tr>
+                                <td>UserName</td>
+                                <td><span>{{user.userName}}</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>UserID</td>
+                                <td><span>{{user.userId}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td> <span>{{user.phone}}</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td><span>{{user.email}}</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td><span>{{user.enabled?"Active" : "Not Active"}}</span></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-card-actions class="text-center">
+            <br>
+            <button mat-raised-button color = "primary">
+                Update
+            </button>
+
+            
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

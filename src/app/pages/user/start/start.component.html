@@ -1,0 +1,120 @@
+<div class="bootstrap-wrapper mt-10 " (contextmenu)="onRightClick()" *ngIf = "!isSubmit">
+    <div class="container-fluid">
+        <div class="row ">
+            <!-- ------------------------Instructions--------------------------- -->
+            <div class="col-md-2  backgound-custom  text-center mt-10" *ngIf = "questions.length != 0">
+                <h1>Instructions</h1>
+                <mat-divider class="mb-20"></mat-divider>
+            </div>
+            <!-- ------------------------Questions Loaded only if Question is present --------------------------- -->
+            <div class="col-md-8" *ngIf = "questions">
+                    <mat-card *ngFor = "let q of questions ; let i = index" class="backgound-custom  mt-10">
+                        <mat-card-content>
+                            <h3><b>Q{{i+1}} </b><span>{{q.content}}</span></h3>
+                            <mat-divider class="mb-20"></mat-divider>
+                            <div class="row mt-20">
+                                <div class="col-md-6">
+                                    <label class="radio-group">
+                                        <input type = "radio" 
+                                        [value]="q.option1" 
+                                        name = {{i}} id = "q.option1" 
+                                        [(ngModel)] = "q.givenAnswers"/>
+                                        <span class="content"> {{q.option1}}</span>
+                                    </label>
+                                    <label class="radio-group">
+                                        <input type = "radio" 
+                                        [value]="q.option2" 
+                                        name = {{i}} id = "q.option2" 
+                                        [(ngModel)] = "q.givenAnswers"/>
+                                        <span class="content"> {{q.option2}}</span>
+                                    </label>   
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="radio-group">
+                                        <input type = "radio" 
+                                        [value]="q.option3" 
+                                        name = {{i}} id = "q.option3" 
+                                        [(ngModel)] = "q.givenAnswers"/>
+                                        <span class="content"> {{q.option3}}</span>
+                                    </label>
+                                    <label class="radio-group">
+                                        <input type = "radio" 
+                                        [value]="q.option4" 
+                                        name = {{i}} id = "q.option4" 
+                                        [(ngModel)] = "q.givenAnswers"/>
+                                        <span class="content"> {{q.option4}}</span>
+                                    </label>       
+                                </div>
+                            </div>
+                            <div class="row mt-20">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+            </div>
+            <!-- ------------------------When No Questions is Present  --------------------------- -->
+            <div class="col-md-8 offset-md-2 mt-20" *ngIf = "questions.length == 0">
+                <mat-card class = "backgound-custom mb-10">
+                    <h1>No Questions Found in this Quiz</h1>
+                </mat-card>
+            </div>
+            <!-- ------------------------ Timer  ------------------------------------------------- -->
+            <div class="col-md-2" *ngIf = "questions.length != 0">
+                <mat-card class="backgound-custom text-center mt-10">
+                    <mat-card-title class="mt-20 mb-20">
+                        Quiz will automatically submit when timer reaches
+                        <b>0 min : 00 sec</b>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <mat-spinner 
+                        mode = "determinate"
+                        [value] = "(timer/ (this.questions[0].quiz.noOfQuestions * 60)) * 100"
+                        color = "accent" 
+                        style="margin: auto;">
+
+                        </mat-spinner>
+                        <h2>{{getFormattedTimer()}}</h2>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+         <!-- ------------------------ Submit Data if Question is present ------------------------------------------------- -->
+        <div class="container text-center mt-20" *ngIf = "questions.length != 0">
+            <button mat-raised-button color = "primary" (click) = "submitQuiz()">Submit</button>
+        </div>
+        <!-- ------------------------ Go Back to Home When No Questions is Present ------------------------------------------------- -->
+        <div class="container text-center mt-20" *ngIf = "questions.length == 0">
+            <button mat-stroked-button color = "primary" [routerLink] ="'/user-dashboard/0'">Home</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="bootstrap-wrapper text-center mt-10 " *ngIf = "isSubmit">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" >
+                <mat-card class=" backgound-custom mt-10  text-center ">
+                    <h1>Quiz Result</h1>
+                    <mat-divider class="mb-20"></mat-divider>
+                    <mat-card-content class="text-left mt-20">
+                        <h2>Marks Scored : {{marksScored}}</h2>
+                        <h2>Correct Answer : {{correctAnswers}}</h2>
+                        <h2>Total Question Attempted : {{attempted}}</h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color = "primary">Print</button>
+                        <button mat-stroked-button color = "primary" 
+                        [routerLink] ="'/user-dashboard/0'">Home</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

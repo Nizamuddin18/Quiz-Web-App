@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    
+    <div class="container ">
+        
+        <div class="row">
+           
+            <div class="col-md-6 offset-md-3 text-center backgound-custom mtp-10">
+                <h1 class="col-md-6 offset-md-3 text-center mt-10">Welcome Back</h1>
+                <form (ngSubmit) = "formSubmit()">
+                    <!-- UserName -->
+                    <mat-form-field class="full-width mt-20" appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input name = "userName"
+                        [(ngModel)] = "loginData.userName"
+                        required
+                        matInput placeholder="UserName">
+                    </mat-form-field>
+
+                    <!-- Password -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input input name = "password"
+                        [(ngModel)] = "loginData.password"
+                        required
+                        matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="container text-center ">
+                        <button type = "submit"
+                        class = "half-width custom-btn" mat-raised-button >Login</button>
+                    </div>
+
+                    <div class="container text-center  forgot-password mt-10">
+                        <a id = "strikedown" routerLink="/signup">Forgot Password</a>         
+                    </div>
+
+                    <mat-divider class="mt-20"> or </mat-divider>
+
+
+                    <div class="container text-center sign-in mt-10 mb-20">
+                        New to Quizzzed ? 
+                        <a id = "strikedown" routerLink="/signup">Sign Up</a>         
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

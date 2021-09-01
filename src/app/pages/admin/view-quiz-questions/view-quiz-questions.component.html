@@ -1,0 +1,45 @@
+<div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container text-center">
+                    <button mat-raised-button color = "primary" [routerLink] = "'/admin/add-questions/' + qid + '/' + title">
+                            Add New Question
+                    </button>
+                </div>
+                <mat-card class = "backgound-custom  mt-10" *ngFor = "let q of questions ; let i = index">
+                    <mat-card-content>
+                        <p><b>Q{{i+1}})</b> <span [innerHTML] = "q.content" class = "ml-10"></span>
+                        </p>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><b>1)</b> {{q.option1}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><b>2)</b> {{q.option2}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><b>3)</b> {{q.option3}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><b>4)</b> {{q.option4}}</p>
+                                </div>
+                            </div>
+                            <mat-divider class = "mb-20"></mat-divider>
+                            <div class="row mt-10">
+                                <p>Correct Answer : <b>{{q.answer}}</b></p>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-stroked-button color = "warn" (click) = "deleteQuestion(q.quesId)">Delete
+                        </button>
+                        <button mat-stroked-button color = "primary" (click) = "update()">Update
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+</div>

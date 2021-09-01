@@ -1,0 +1,94 @@
+<div class="bootstrap-wrapper ">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card class="backgound-custom mt-20">
+                    
+
+                    <mat-card-content>
+                        <form (ngSubmit) = "formSubmit()">
+                   
+                            <!-- UserName -->
+                            <mat-form-field class="full-width mt-10" appearance="outline">
+                                <mat-label>UserName</mat-label>
+                                <input name = "userName"
+                                required
+                                [(ngModel)] = "user.userName"
+                                matInput placeholder="Enter UserName">
+                            </mat-form-field>
+        
+                            <!-- FirstName -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>FirstName</mat-label>
+                                <input name = "firstName"
+                                required
+                                [(ngModel)] = "user.firstName"
+                               matInput placeholder="Enter FirstName">
+                            </mat-form-field>
+        
+        
+                            <!-- LastName -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>LastName</mat-label>
+                                <input name = "lastName"
+                                required
+                                [(ngModel)] = "user.lastName"
+                                matInput placeholder="Enter LastName">
+                            </mat-form-field>
+        
+        
+                            <!-- Password -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input input name = "password"
+                                required
+                                [(ngModel)] = "user.password"
+                                matInput [type]="hide ? 'password' : 'text'">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+        
+                            <!-- Phone No -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Phone Number</mat-label>
+                                <input input name = "phone"
+                                required
+                                [(ngModel)] = "user.phone"
+                                type = "number" matInput placeholder="Enter Phone Number">
+                            </mat-form-field>
+        
+        
+                              <!--Email -->
+                              <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Email Address</mat-label>
+                                <input input name = "email"
+                                [(ngModel)] = "user.email"
+                                type = "email" matInput placeholder="Enter Email">
+                                <!-- <mat-error *ngIf="user.email.invalid">{{getErrorMessage()}}</mat-error> -->
+                            </mat-form-field>
+        
+                            <div class="container text-center">
+                                <button type = "submit" 
+                                class = "half-width mb-10 signup-custom" mat-raised-button color="primary">Sign Up</button>
+                            </div>
+                            
+                            <div class="container text-center service-and-policy">
+                                By clicking Sign Up, you agree to the Quizzzed 
+                                <a id = "strikedown" href="#">User Agreement</a>,
+                                <a id = "strikedown" href="#">Privacy Policy</a> and
+                                <a id = "strikedown" href="#">Cookie Policy</a>.
+                                            
+                            </div>
+                            <mat-divider class="mb-20"> or </mat-divider>
+                            <div class="container text-center margin-wrapper sign-in mt-10">
+                                Already on Quizzzed? 
+                                <a id = "strikedown" routerLink="/login"><b>Log in</b></a>         
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
